@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::prefix('users')->group(function () {
+    Route::get('/','UsersController@index');
+    Route::get('/{nom}','UsersController@more')->where('nom', "[A-Z,a-z]+");
+    });
+
+    Route::prefix('exchanges')->group(function(){
+        Route::get('/', 'UsersController@get');
+        Route::post('/','UsersController@add');
+    });
