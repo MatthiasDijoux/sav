@@ -8,8 +8,11 @@
             <div class="card-body">
               <p class="card-text">{{$client->nom}} {{$client->prenom}}</p>
               <a href="/users/{{$client->nom}}" class="btn btn-outline-info">Plus d'info</a>
+              <a href="/users/exchanges/{{$client->id}}" class="btn btn-outline-info">Historique d'échange</a>
+
             </div>
-            @endforeach
+            
 
         </div>
+        @endforeach
 @endsection

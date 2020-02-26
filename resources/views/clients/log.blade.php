@@ -1,19 +1,21 @@
 @extends('layouts.app')
 @section('content')
-@foreach($users as $user)
+
 <div class="container">
         <div class="row">
                 <div class="col-md-6 mt-5">
 <div class="card mx-auto">
+        <h5 class="card-title">Liste des commentaires </h5>
         <div class="card-body">
-          <h5 class="card-title">{{$user->nom}} {{$user->prenom}}</h5>
+                @foreach($datas as $data)
+
           <p class="card-text">
-                {{$user->telephone}}
+                {{$data->commentaires}}
         </p>
+        @endforeach
+
        <p>
-                {{$user->mail}}
         </p>
-          <a href="/users/" class="btn btn-primary">Retour</a>
         </div>
       </div>
                 </div>
@@ -22,5 +24,4 @@
 
               
               
-      @endforeach
 @endsection

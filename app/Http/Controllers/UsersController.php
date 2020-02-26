@@ -42,7 +42,11 @@ class UsersController extends Controller
             'id_operateurs'=>'required'
         ])->validate();
         $user = ExchangesModel::create($validator)->save();
-        return "Ajouter dans la vdd";
+        return "Ajouter dans la bdd";
     }
-    
+    function log($id){
+        $log = ExchangesModel::where('id_clients','=',$id)->get();
+        $datas = ExchangesResource::collection($log);
+        return view('clients.log', ['datas'=>$datas]);
+    }
 }
