@@ -1,27 +1,22 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="container">
-        <div class="row">
-                <div class="col-md-6 mt-5">
-<div class="card mx-auto">
-        <h5 class="card-title">Liste des commentaires </h5>
-        <div class="card-body">
-                @foreach($datas as $data)
 
-          <p class="card-text">
-                {{$data->commentaires}}
-        </p>
-        @endforeach
-
-       <p>
-        </p>
-        </div>
-      </div>
+<div class="card col-md-6 mx-auto mt-5" style="width: 18rem;">
+                
+                <div class="card-header">
+                        
+                  Liste des commentaires de {{$clients->nom}} {{$clients->prenom}}
                 </div>
-        </div>
-</div>
+                @foreach($datas as $data)
+                <ul class="list-group list-group-flush">
+                                
+                  <li class="list-group-item">{{$data->commentaires}}</li>
 
-              
-              
+                </ul>
+                @endforeach
+                <a href="/" class="btn btn-primary mb-2">Retour</a>
+
+              </div>    
+
 @endsection

@@ -13,7 +13,7 @@
        <p>
                 {{$user->mail}}
         </p>
-          <a href="/users/" class="btn btn-primary">Retour</a>
+          <a href="/" class="btn btn-primary">Retour</a>
         </div>
       </div>
                 </div>

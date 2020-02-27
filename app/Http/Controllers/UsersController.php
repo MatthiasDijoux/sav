@@ -25,7 +25,7 @@ class UsersController extends Controller
     function more($nom){
         $users = UsersModel::where('nom','=',$nom)->get();
         $clients = new ResourceCollection($users);
-        return view('clients.more')->with('users',$users);
+        return view('clients.more')->with('users',$clients);
     }
     function get(){
         $clients = UsersModel::all();
@@ -47,6 +47,7 @@ class UsersController extends Controller
     function log($id){
         $log = ExchangesModel::where('id_clients','=',$id)->get();
         $datas = ExchangesResource::collection($log);
-        return view('clients.log', ['datas'=>$datas]);
+        $clients = UsersModel::find(1);
+        return view('clients.log', ['datas'=>$datas, 'clients'=>$clients]);
     }
 }

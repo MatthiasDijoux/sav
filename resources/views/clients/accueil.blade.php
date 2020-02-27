@@ -7,8 +7,8 @@
           <div class="card col-md-4 mx-5 mt-5">
             <div class="card-body">
               <p class="card-text">{{$client->nom}} {{$client->prenom}}</p>
-              <a href="/users/{{$client->nom}}" class="btn btn-outline-info">Plus d'info</a>
-              <a href="/users/exchanges/{{$client->id}}" class="btn btn-outline-info">Historique d'échange</a>
+              <a href="/{{$client->nom}}" class="btn btn-outline-info">Plus d'info</a>
+              <a href="/exchanges/{{$client->id}}" class="btn btn-outline-info">Historique d'échange</a>
 
             </div>
             

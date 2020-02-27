@@ -8,7 +8,7 @@
 <div class="card mx-auto">
         <div class="card-body">
           <h5 class="card-title">Ajout d'un echange</h5>
-          <form action="/exchanges/" method="post">
+          <form action="/users/exchanges" method="post">
             {{ csrf_field() }}
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Client</label>
