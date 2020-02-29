@@ -42,7 +42,7 @@ class UsersController extends Controller
             'id_operateurs'=>'required'
         ])->validate();
         $user = ExchangesModel::create($validator)->save();
-        return "Ajouter dans la bdd";
+        return view("clients.valider");
     }
     function log($id){
         $log = ExchangesModel::where('id_clients','=',$id)->get();
